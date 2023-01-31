@@ -35,28 +35,6 @@ Foreign Key (emp_no) References Employees (emp_no),
 	Primary Key (emp_no)
 );
 
-
--- Retirement eligibility
-
-select first_name, last_name
-From employees
-where (birth_date Between '1952-01-01' AND '1955-12-31') and
-(hire_date BETWEEN '1985-01-01' AND '1988-12-31');
-
--- Number of Elig Retires
-select count(first_name) 
-From employees
-where (birth_date Between '1952-01-01' AND '1955-12-31') and
-(hire_date BETWEEN '1985-01-01' AND '1988-12-31');
-
-select emp_no, first_name, last_name
-into retimement_info
-From employees
-where (birth_date Between '1952-01-01' AND '1955-12-31') and
-(hire_date BETWEEN '1985-01-01' AND '1988-12-31');
-
-select * from retimement_info
-
 Create Table titles (
 	emp_no int Not Null,  
 	title varchar(25) Not Null, 
